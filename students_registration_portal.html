@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Student Portal — Complete HTML Practice</title>
+  <style>
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f0f4f8, #e8f1ff);
+  color: #333;
+}
+
+
+header {
+  background: linear-gradient(to right, #4a90e2, #6a5acd);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  background: white;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+blockquote {
+  font-style: italic;
+  background: #f9f9f9;
+  border-left: 6px solid #4a90e2;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  color: #555;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; 
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+button, input[type="submit"] {
+  background: linear-gradient(to right, #4a90e2, #6a5acd);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: linear-gradient(to right, #6a5acd, #4a90e2);
+}
+
+
+aside {
+  background: #f0f6ff;
+  border-left: 6px solid #6a5acd;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+
+article {
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+
+iframe {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background: linear-gradient(to right, #4a90e2, #6a5acd);
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tbody tr:hover {
+  background: #eef4ff;
+}
+
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.resource-list a {
+  display: block;
+  padding: 12px 15px;
+  background: #f0f6ff;
+  border-left: 6px solid #4a90e2;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.resource-list a:hover {
+  background: linear-gradient(to right, #4a90e2, #6a5acd);
+  color: white;
+  transform: translateX(5px);
+}
+</style>
+
+</head>
+<body>
+
+ 
+  <a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
+
+  <!-- Header with Navigation -->
+  <header id="top">
+    <h1>Student Portal</h1>
+    <h2><small>Your place to register, update and learn</small></h2>
+
+    <nav aria-label="Primary">
+      <a href="#about">About</a> |
+      <a href="#register">Register</a> |
+      <a href="#profile">Profile</a> |
+      <a href="#gallery">Gallery</a> |
+      <a href="#resources">Resources</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+    <hr>
+  </header>
+
+  <main id="main">
+
+    <!-- ABOUT -->
+    <section id="about">
+  <h2>About</h2>
+  <p>
+    The Student Registration Portal is a user-friendly platform designed to simplify the process of student enrollment.
+    It allows students to register for courses, update personal details, and access important academic information from
+    one centralized location. With its intuitive interface and organized layout, the portal ensures that students can
+    complete their registrations quickly and accurately, saving time for both students and administrators.
+  </p>
+
+
+      <blockquote>
+        <p>"Success is the sum of small efforts, repeated day in and day out.</p>
+      </blockquote>
+
+      <hr>
+    </section>
+
+    <!-- REGISTER FORM -->
+    <section id="register" aria-labelledby="register-heading">
+      <h2 id="register-heading">Student Registration Form</h2>
+
+    
+      <form method="post" enctype="multipart/form-data" novalidate>
+        <!-- Name -->
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" placeholder="Aishwarya Kalshetti" required><br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com"><br><br>
+
+        <!-- Password -->
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="password" minlength="6"><br><br>
+
+        <!-- Date -->
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <!-- Number and range -->
+        <label for="exp">Years of Experience:</label>
+        <input type="number" id="exp" name="experience" min="0" max="50" value="0"><br><br>
+
+        <label for="skillrange">Skill Level (0-100):</label>
+        <input type="range" id="skillrange" name="skilllevel" min="0" max="100" value="50"><br><br>
+
+        <!-- Radio (gender) -->
+        <fieldset>
+          <legend>Gender</legend>
+          <label><input type="radio" name="gender" value="male"> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </fieldset>
+        <br>
+
+        <!-- Checkboxes (skills) -->
+        <fieldset>
+          <legend>Skills</legend>
+          <label><input type="checkbox" name="skills" value="html"> HTML</label>
+          <label><input type="checkbox" name="skills" value="css"> CSS</label>
+          <label><input type="checkbox" name="skills" value="js"> JavaScript</label>
+          <label><input type="checkbox" name="skills" value="py"> Python</label>
+        </fieldset>
+        <br>
+
+        <!-- Datalist (suggestions) -->
+        <label for="college">College (suggestions):</label>
+        <input list="colleges" id="college" name="college">
+        <datalist id="colleges">
+          <option value="ABC Institute">
+          <option value="XYZ University">
+          <option value="PQR College">
+        </datalist>
+        <br><br>
+
+        <!-- File upload -->
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*"><br><br>
+
+        <!-- Select -->
+        <label for="course">Choose Course:</label>
+        <select id="course" name="course">
+          <option value="webdev">Web Development</option>
+          <option value="datasci">Data Science</option>
+          <option value="uiux">UI/UX Design</option>
+          <option value="ai">AI & ML</option>
+        </select>
+        <br><br>
+
+        <!-- Textarea -->
+        <label for="aboutyou">About Yourself:</label><br>
+        <textarea id="aboutyou" name="about" rows="4" cols="40" placeholder="Write about your goals..."></textarea>
+        <br><br>
+
+        <!-- Details / summary -->
+        <details>
+          <summary>Read submission guidelines</summary>
+          <p>Please ensure all details are accurate. This form is for practice and does not submit to a server.</p>
+        </details>
+        <br>
+
+        <!-- Buttons -->
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+      </form>
+
+      <hr>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile" aria-labelledby="profile-heading">
+      <h2 id="profile-heading">Student Profiles</h2>
+
+      <table border="1" cellpadding="6" summary="Sample student profiles">
+        <caption>Enrolled Students</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Skills</th>
+            <th>Enrollment Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aishwarya Kalshetti</td>
+            <td>Web Development</td>
+            <td>HTML, CSS</td>
+            <td><time datetime="2025-01-15">Jan 15, 2025</time></td>
+          </tr>
+          <tr>
+            <td>John Doe</td>
+            <td>Data Science</td>
+            <td>Python, SQL</td>
+            <td><time datetime="2024-08-01">Aug 1, 2024</time></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Total students: 2</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <hr>
+    </section>
+
+    <!-- GALLERY: image, figure, audio, video -->
+    <section id="gallery" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">Media Gallery</h2>
+
+      <figure>
+        <img src="https://via.placeholder.com/320x180.png?text=Student+Event" alt="Student Event Placeholder" width="320" height="180">
+        <figcaption>Figure 1: Student event (placeholder image).</figcaption>
+      </figure>
+
+      <p>Listen: sample audio (placeholder)</p>
+      <audio controls>
+        <source src="sample-audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <p>Watch: sample video (placeholder)</p>
+      <video width="320" height="180" controls>
+        <source src="sample-video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+
+      <hr>
+    </section>
+
+    <!-- RESOURCES-->
+    <section id="resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Courses & How to Use</h2>
+
+      <h3>Available Courses</h3>
+      <ul>
+        <li>Web Development</li>
+        <li>Data Science</li>
+        <li>UI/UX Design</li>
+        <li>AI & ML</li>
+      </ul>
+
+      <h3>Quick Steps</h3>
+      <ol>
+        <li>Fill the registration form</li>
+        <li>Upload required documents</li>
+        <li>Attend orientation</li>
+      </ol>
+
+      <h3>Glossary</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language — the structure of web pages.</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets — used to style web pages (seen later).</dd>
+      </dl>
+
+      <!-- meter & progress -->
+      <p>Portal usage (simulated):</p>
+      <meter value="0.6">60%</meter>
+      <progress value="30" max="100">30%</progress>
+
+      <hr>
+    </section>
+
+    <!-- EMBEDDED MAP (iframe) -->
+    <section id="location" aria-labelledby="location-heading">
+      <h2 id="location-heading">Our Location</h2>
+      <!-- Example Google Maps iframe (replace with a real embed if needed) -->
+      <iframe
+        title="Map to office (placeholder)"
+        src="https://www.google.com/maps?q=Pune+India&output=embed"
+        width="400"
+        height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p><small>Map is embedded for demo purposes.</small></p>
+
+      <hr>
+    </section>
+
+    <!-- CONTACT & ADDRESS -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact & Address</h2>
+      <address>
+        Student Portal Office<br>
+        123 Learning Lane,<br>
+        Pune, Maharashtra, India<br>
+        Email: <a href="mailto:support@studentportal.example">support@studentportal.example</a>
+      </address>
+
+      <p>Follow us on social (links – placeholders):</p>
+      <a href="https://example.com" rel="noopener noreferrer">Facebook</a> |
+      <a href="https://example.com" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://example.com" rel="noopener noreferrer">LinkedIn</a>
+
+      <hr>
+    </section>
+
+    <!-- ASIDE for notes -->
+    <aside aria-labelledby="note-heading">
+      <h3 id="note-heading">Notes</h3>
+      <p><small>Tip: This file is for practice. You can safely edit and reload the page to test changes.</small></p>
+
+      <!-- template (inert content) -->
+      <template id="sample-template">
+        <p>This is a template element. It does not render until used by script.</p>
+      </template>
+    </aside>
+
+    <!-- small demonstration of semantic article -->
+    <article>
+      <h3>News: Upcoming Workshop</h3>
+      <p>We will host a <strong>free HTML workshop</strong> on <time datetime="2025-09-01">September 1, 2025</time>. Seats are limited.</p>
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Student Portal | All Rights Reserved. &reg;</p>
+    <p><small>Page created for HTML practice. Contact: <a href="mailto:webmaster@studentportal.example">webmaster@studentportal.example</a></small></p>
+  </footer>
+
+
+</body>
+</html>
